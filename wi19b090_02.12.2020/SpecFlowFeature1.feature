@@ -3,24 +3,22 @@
     As a math idiot
     I want to use an easy calculator
 
-
 Scenario: add two numbers
-    Given calculator object
-    When adding number 1 and number 2
-    Then should return number 3
+    Given a calculator object
+    When adding 1 and 2
+    Then should return 3
 
 Scenario: subtract two numbers
-    Given calculator object
-    When substracting the number 2 from the number1
-    Then should return the number 1
-
+    Given a calculator object
+    When substracting 2 from 1
+    Then should return 1
 
 Scenario: multiply two numbers
-    Given calculator object
-    When multypliing the number 1 with the number 2
-    Then should return the number 2
+    Given a calculator object
+    When multypliing 1 with 2
+    Then should return 2
 
 Scenario: divide two numbers
-    Given calculator object
-    When divide the number 2 with the number 1
-    Then should return the number 2
+    Given a calculator object
+    When divide 2 with 1
+    Then should return 2

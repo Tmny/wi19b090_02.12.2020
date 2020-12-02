@@ -1,4 +1,5 @@
-﻿using TechTalk.SpecFlow;
+﻿using System;
+using TechTalk.SpecFlow;
 using Xunit;
 
 namespace wi19b090_02._12._2020
@@ -6,28 +7,46 @@ namespace wi19b090_02._12._2020
     [Binding]
     public class SpecFlowFeature1Steps
     {
-        [Given(@"the first number is (.*)")]
-        public void GivenTheFirstNumberIs(string p0)
+        private Calc calc;
+        private int result;
+        [Given(@"a calculator object")]
+        public void GivenACalculatorObject()
         {
-            Assert.Equal(p0, "Lampe1");
+            this.calc = new Calc();
         }
 
-        [Given(@"the second number is (.*)")]
-        public void GivenTheSecondNumberIs(int p0)
+        [When(@"adding (.) and (.)")]
+        public void WhenAddingAnd(int p0, int p1)
         {
-            ScenarioContext.Current.Pending();
+            result = calc.add(p0, p1);
         }
 
-        [When(@"the two numbers are added")]
-        public void WhenTheTwoNumbersAreAdded()
+        [Then(@"should return (.)")]
+        public void ThenShouldReturnSumm(int p0)
         {
-            ScenarioContext.Current.Pending();
+            Assert.Equal(p0, result);
         }
 
-        [Then(@"the result should be (.*)")]
-        public void ThenTheResultShouldBe(int p0)
+        [When(@"substracting (.) from (.)")]
+        public void WhenSubstractingFrom(int p0, int p1)
         {
-            ScenarioContext.Current.Pending();
+            result = calc.substract(p0, p1);
         }
+
+        [When(@"multypliing (.) with (.)")]
+        public void WhenMultypliingWith(int p0, int p1)
+        {
+            result = calc.multiply(p0, p1);
+
+        }
+
+        [When(@"divide (.) with (.*)")]
+        public void WhenDivideWith(int p0, int p1)
+        {
+            result = calc.divide(p0, p1);
+
+        }
+
     }
 }
+
